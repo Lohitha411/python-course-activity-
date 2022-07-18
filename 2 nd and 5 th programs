@@ -1,0 +1,82 @@
+
+
+# Python Program to Print Floyd's Triangle
+rows = int(input("Please Enter the total Number of Rows : "))
+number = 1
+
+print("Floyd's Triangle")
+for i in range(1, rows + 1):
+  for j in range(1, i + 1):
+    print(number, end = ' ')
+    number = number + 1
+  print()
+  
+ 
+no_heaps = int(input("Enter no of pubble heaps"))
+heaps = no_heaps
+if(no_heaps % 2 == 0):
+  while(no_heaps > 0):
+    print(heaps)
+    heaps = heaps + 2
+    no_heaps = no_heaps - 1
+else:
+  while(no_heaps > 0):
+    print(heaps)
+    heaps = heaps + 2
+    no_heaps = no_heaps - 1
+
+#5 th program code
+
+def isPrime(num):
+    count = 0
+    for i in range(1, (num+1)):
+        if num % i == 0:
+           count += 1
+     
+    return count == 2
+    
+def reverse(n):
+     rev =0     
+     while (n>0):
+           rem = n % 10
+           rev =(rev* 10)+rem
+           n = n // 10
+     return rev
+def isPalindromePrime(n):
+    if (isPrime(n) and n==reverse(n)):
+        return True
+    return False
+def isEmirp(n):
+     r=reverse(n)
+     if(isPrime(n) and isPrime(r)):
+         return True
+     return False
+def mersennePrime(n):
+    if(isPrime(n)):
+        return ((2**p)-1)
+    else:
+        print("not primes")
+def TwinPrimes(r):
+    for i in range(2,r+1):
+        for j in range(2,r+1):
+            if isPrime(i) and isPrime(j) and j-i==2:
+               print('(',i,',',j,')')
+import prime
+print("\nfirst 100 prime numbers are")
+for i in range(2,101):
+    if(prime.isPrime(i)):
+        print(i,end=' ')
+print("\nfirst 200 palindrome prime numbers are")
+for i in range(2,201):
+    if(prime.isPalindromePrime(i)):
+        print(i,end=' ')
+print("\nfirst 100 emirp numbers are")
+for i in range(2,101):
+    if(prime.isEmirp(i)):
+        print(i,end=' ')
+print("\nMersenne prime numbers for the n value before 32 are")
+for i in range(2,101):
+    if(prime.isPrime(i)):
+        print(i)
+print("\nTwin prime num below 1000 are")
+prime.TwinPrimes(1000)
